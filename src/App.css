@@ -1,0 +1,21 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.navbar-div {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.content {
+  position: relative;
+  height: 100%;
+  margin-top: 70px;
+}
+
+.landing-page {
+  margin-top: 10%;
+}
