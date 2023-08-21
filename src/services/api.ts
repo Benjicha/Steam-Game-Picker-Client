@@ -12,9 +12,9 @@ export const getGames = async () => {
     }
 };
 
-export const getRandomGame = async () => {
+export const getRandomGame = async (genre: string, category: string) => {
     try {
-        const response = await axios.get<Games>(`${BASE_URL}/Game/Random/`);
+        const response = await axios.get<Games>(`${BASE_URL}/Game/Random/${genre}/${category}`);
         return response.data
     } catch (error) {
         throw error

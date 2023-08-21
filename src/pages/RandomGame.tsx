@@ -17,18 +17,18 @@ import {
   } from '@mui/material';
   import { Event, Money } from '@mui/icons-material';
 
-const genreOptions: Dictionary<string>[] = [{"all": "All Categories"}, {"fps": "FPS"}, {"action": "Action"}]
-const categoryOptions: Dictionary<string>[] = [{"single": "Single Player"}, {"multi": "Multiplayer"}, {"coop": "CO-OP"}]
+const genreOptions: Dictionary<string>[] = [{"all": "All Genres"}, {"Indie": "Indie"}, {"Adventure": "Adventure"}, {"RPG": "RPG"}, {"Action": "Action"}]
+const categoryOptions: Dictionary<string>[] = [{"all": "All Categories"}, {"single": "Single Player"}, {"multi": "Multiplayer"}, {"Co-op": "CO-OP"}]
 
 const RandomGame = () => {
     const [game, setGame] = useState<Games | null>(null);
     const [isLoaded, setIsLoaded] = useState<boolean>(false);
     const [genre, setGenre] = useState<string>("all");
-    const [category, setCategory] = useState<string>("single");
+    const [category, setCategory] = useState<string>("all");
 
     const HandleNewGame = () => {
         setIsLoaded(false);
-        getRandomGame().then((res) => {
+        getRandomGame(genre, category).then((res) => {
             setGame(res);
             setIsLoaded(true);
         });
